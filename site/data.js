@@ -5,7 +5,7 @@ export const pages = [
   ['Boons', 'Spend 3 boon points. Alternative Studies and Multipurpose Specialist can be taken more than once.'],
   ['Sponsors I', 'Choose up to 2 sponsors across both pages. Each grants two boons; a single sponsor also grants its solo boon.'],
   ['Sponsors II', 'These sponsors share the same allowance as page 3. A Nobody increases your allowance to 3.'],
-  ['Companions', 'Choose up to 6 companions to share your journey.'],
+  ['Companions', 'Choose up to 4 companions to share your journey.'],
   ['Conspiracies I', 'Choose one conspiracy across both pages. Its Conspiracy Focus becomes part of your story.'],
   ['Conspiracies II', 'These conspiracies share the same single choice as page 6.'],
   ['Quests I', 'Choose up to 4 quests across both pages, or skip quests and choose up to 4 substitute rewards.'],

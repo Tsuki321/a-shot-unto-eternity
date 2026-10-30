@@ -4,7 +4,7 @@ export const emptyBuild = () => ({version:1,name:'',arrival:'Academy orientation
 const count = (s,id) => s.boons[id] || 0;
 const boonId = name => ofType('boon').find(e=>e.name===name).id;
 const STUDIES=boonId('Alternative Studies'), SPECIALIST=boonId('Multipurpose Specialist'), NOBODY=boonId('A Nobody');
-export const limits = s => ({courses:1+count(s,STUDIES),specializations:1+count(s,SPECIALIST),boons:3,sponsors:2+count(s,NOBODY),companions:6,quests:4,gifts:4});
+export const limits = s => ({courses:1+count(s,STUDIES),specializations:1+count(s,SPECIALIST),boons:3,sponsors:2+count(s,NOBODY),companions:4,quests:4,gifts:4});
 export const boonCost = s => Object.entries(s.boons).reduce((sum,[id,n])=>sum+byId[id].cost*n,0);
 export const sponsorBoons = id => ofType('sponsorBoon').filter(e=>e.sponsor===id);
 export const isSelected = (s,e) => e.type==='boon'?count(s,e.id)>0:e.type==='conspiracy'?s.conspiracy===e.id:e.type==='sponsorBoon'?derive(s).grants.some(g=>g.id===e.id):e.type==='character'?s.mode==='skip'&&s.gifts.includes(e.id):(s[{course:'courses',specialization:'specializations',sponsor:'sponsors',companion:'companions',quest:'quests'}[e.type]]||[]).includes(e.id);

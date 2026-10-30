@@ -90,7 +90,7 @@ function summaryGroup(label, ids, gift=false) {
 }
 function renderSummary() {
   const lim=limits(state), issues=validate(state), {grants,rewards}=derive(state);
-  const counters=[['Courses',state.courses.length,lim.courses],['Specialties',state.specializations.length,lim.specializations],['Boon points',boonCost(state),3],['Sponsors',state.sponsors.length,lim.sponsors],['Companions',state.companions.length,6],[state.mode==='quests'?'Quests':'Rewards',state.mode==='quests'?state.quests.length:state.gifts.length,4]];
+  const counters=[['Courses',state.courses.length,lim.courses],['Specialties',state.specializations.length,lim.specializations],['Boon points',boonCost(state),3],['Sponsors',state.sponsors.length,lim.sponsors],['Companions',state.companions.length,lim.companions],[state.mode==='quests'?'Quests':'Rewards',state.mode==='quests'?state.quests.length:state.gifts.length,4]];
   $('counters').innerHTML=counters.map(([name,n,max])=>`<div class="counter ${n>max?'over':''}"><span>${name}</span><strong>${n} / ${max}</strong></div>`).join('');
   const statusOpen=$('rule-status').querySelector('details')?.open;
   $('rule-status').innerHTML=issues.length?`<details class="status" ${statusOpen?'open':''}><summary>${issues.length} item${issues.length===1?'':'s'} to resolve</summary><ul>${issues.map(i=>`<li>${esc(i)}</li>`).join('')}</ul></details>`:'<div class="status good">✓ Your build follows the choice rules.</div>';

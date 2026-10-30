@@ -36,6 +36,12 @@ test('both sponsor pages and both quest pages share their respective limits',()=
   s.quests=ofType('quest').filter(e=>e.page===8).slice(0,3).concat(ofType('quest').filter(e=>e.page===9).slice(0,2)).map(e=>e.id);
   assert.ok(validate(s).some(i=>i.includes('at most 4 quests')));
 });
+test('the printed companion limit is four; a quest can grant an additional companion',()=>{
+  const s=complete();s.companions=ofType('companion').slice(0,4).map(e=>e.id);
+  assert.equal(limits(s).companions,4);assert.deepEqual(validate(s),[]);
+  s.quests=[id('A Knight’s Prestige')];assert.deepEqual(validate(s),[]);assert.equal(derive(s).rewards[0].grant,id('Lance DeLac'));
+  s.companions.push(id('Lance DeLac'));assert.ok(validate(s).some(i=>i.includes('at most 4 companions')));
+});
 test('missing sponsor quest grants one non-solo boon, and recalculates when sponsorship changes',()=>{
   let s=choose(complete(),'The Mertvya’s Princess'),q=byId[id('The Mertvya’s Princess')];
   assert.equal(derive(s).grants.length,1);assert.ok(!byId[derive(s).grants[0].id].solo);assert.ok(!rewardOptions(s,q).some(o=>o.value==='solo'));

@@ -18,7 +18,7 @@ The quest pages let you select up to four quests, adjust their rewards, or skip 
 
 - One academy course and a specialization within it; three boon points. Alternative Studies adds a course without its own specialization. Multipurpose Specialist adds a specialization within any selected course. Both are repeatable. Outside Fate costs two points.
 - Up to two sponsors across pages 3–4, or three with A Nobody. A selected sponsor grants both ordinary boons; a single selected sponsor also grants its solo boon.
-- Up to six companions and one conspiracy across pages 6–7, including that conspiracy’s printed Focus.
+- Up to four companions and one conspiracy across pages 6–7, including that conspiracy’s printed Focus.
 - Up to four quests across pages 8–9. Existing prerequisites unlock printed quest rewards. Without a companion prerequisite, the reward is that companion; without a sponsor prerequisite, choose one ordinary boon from that sponsor. An existing sponsor can instead grant its missing solo boon. Any quest reward can be declined.
 - Quest and substitute rewards do not consume the initial companion or sponsor allowance. Initial sponsorship determines automatic solo bonuses. Rewards are evaluated against initial selections, with no circular reward dependencies.
 - Skipping quests allows companions not selected initially, conspiracy characters, or boons from sponsors not selected initially. The printed skip rule does not exclude solo boons, so these are available as substitute rewards.
