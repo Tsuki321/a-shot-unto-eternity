@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101720">
+  <meta name="description" content="Choose your courses, boons, sponsors and companions in EternalAnon’s A Shot Unto Eternity. An interactive CYOA with original artwork and Markdown build export.">
+  <title>A Shot Unto Eternity — Interactive CYOA</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#workspace">Skip to choices</a>
+  <header class="masthead">
+    <div><p class="eyebrow">ETERNALANON’S · INTERACTIVE CYOA</p><h1>A Shot Unto <em>Eternity</em></h1><p class="intro">A new world. A place at the academy. A future of your choosing.</p></div>
+    <div class="save-tools"><span id="save-status" role="status">Your progress stays in this browser</span><div class="button-row"><button id="import-button">Import build</button><button id="export-button" class="primary">Export Markdown <span aria-hidden="true">↗</span></button></div><input id="import-file" type="file" accept=".md,.markdown,text/markdown,text/plain" hidden></div>
+  </header>
+  <nav class="page-nav" aria-label="Illustrated pages" id="page-nav"></nav>
+  <main id="workspace" class="workspace">
+    <section class="reader" aria-labelledby="page-title">
+      <div class="reader-heading"><div><p class="eyebrow" id="page-number"></p><h2 id="page-title"></h2></div><div class="button-row"><button id="previous" aria-label="Previous page">←</button><button id="next" aria-label="Next page">→</button></div></div>
+      <p id="page-rule" class="rule"></p>
+      <div id="quest-mode-wrap" hidden><fieldset class="mode-switch"><legend>Your adventures</legend><label><input type="radio" name="quest-mode" value="quests" checked> Choose quests</label><label><input type="radio" name="quest-mode" value="skip"> Skip for substitute rewards</label></fieldset><p class="muted">Switching modes preserves your choices. Only the active mode counts toward your build.</p><div id="gifts-panel"></div></div>
+      <div class="reader-tools"><div class="button-row"><button id="art-view" aria-pressed="true">Illustrated page</button><button id="list-view" aria-pressed="false">Choice list</button></div><label id="zoom-wrap">Size <select id="zoom"><option value="fit">Fit page</option><option value="1200">1200 px</option><option value="1600">Full size</option></select></label></div>
+      <p class="reading-hint" id="reading-hint">Click a choice on the page to select it. Use the choice list for details and repeatable boons.</p>
+      <div id="illustration-scroll" class="illustration-scroll"><div id="illustration" class="illustration"></div></div>
+      <div id="catalog" hidden><label class="search-label" for="choice-search">Find a choice on this page</label><input id="choice-search" type="search" placeholder="Search names…" autocomplete="off"><div id="choice-list"></div></div>
+      <div class="page-bottom"><button id="bottom-previous">← Previous page</button><a href="#workspace">Back to top ↑</a><button id="bottom-next">Next page →</button></div>
+    </section>
+    <aside class="build-panel" id="build-panel" aria-labelledby="build-title">
+      <div class="build-heading"><div><p class="eyebrow">YOUR STORY</p><h2 id="build-title">Venator dossier</h2></div><button id="close-build" aria-label="Close build summary">×</button></div>
+      <label for="build-name">Character name</label><input id="build-name" maxlength="100" placeholder="Your name, Venator">
+      <label for="arrival">Arrival</label><select id="arrival"><option>Academy orientation</option><option>Reincarnation</option><option>Insertion into the timeline</option></select>
+      <div id="counters" class="counters"></div><div id="rule-status"></div>
+      <div id="summary"></div>
+      <label for="build-notes">Character notes</label><textarea id="build-notes" rows="4" maxlength="20000" placeholder="Appearance, equipment, boon variants, relationships, or your own story…"></textarea>
+      <button id="reset-button" class="quiet">Start a new build</button>
+    </aside>
+  </main>
+  <footer>Original story and illustrated CYOA by <strong>EternalAnon</strong>. <a href="https://imgchest.com/p/9249g6vlm7n" target="_blank" rel="noopener noreferrer">Read the source ↗</a><p>This adaptation follows the printed choice rules. Add your own interpretations and story details to your character notes.</p></footer>
+  <button id="mobile-build" class="mobile-build">Your build <span id="mobile-count"></span> ↑</button>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <dialog id="detail-dialog"><div class="dialog-head"><h2 id="detail-title"></h2><button id="detail-close" aria-label="Close choice details">×</button></div><div id="detail-meta"></div><div id="detail-controls"></div><p class="muted">Original text and artwork. Scroll horizontally to read at full size.</p><div class="detail-scroll"><div id="detail-crop"></div></div></dialog>
+  <dialog id="confirm-dialog"><h2 id="confirm-title"></h2><p id="confirm-text"></p><div class="button-row"><button id="confirm-cancel">Cancel</button><button id="confirm-accept" class="primary">Continue</button></div></dialog>
+  <noscript><div class="noscript">Enable JavaScript to select choices and save your build. <a href="https://imgchest.com/p/9249g6vlm7n">Read the original illustrated CYOA.</a></div></noscript>
+</body>
+</html>

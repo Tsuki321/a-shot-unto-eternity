@@ -1,0 +1,7 @@
+.working/
+source/
+codex-session-*.md
+*.zip
+node_modules/
+test-results/
+playwright-report/
